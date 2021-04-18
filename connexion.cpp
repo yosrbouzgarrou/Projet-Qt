@@ -1,19 +1,18 @@
 #include "connexion.h"
+#include <exception>
+Connexion::Connexion()
+{}
 
-connexion::connexion()
-{
-
-}
-
-bool connexion::createconnect()
+bool Connexion::ouvrirConnexion()
 {bool test=false;
 QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
 db.setDatabaseName("Source_Projet2A");
-db.setUserName("yasmine");//inserer nom de l'utilisateur
-db.setPassword("yasmine");//inserer mot de passe de cet utilisateur
-
+db.setUserName("Amine");//inserer nom de l'utilisateur
+db.setPassword("esprit20");//inserer mot de passe de cet utilisateur
 if (db.open())
-test=true;
-    return  test;
+    test=true;
+
+return  test;
 }
-void connexion::closeConnexion(){db.close(); }
+void Connexion::fermerConnexion()
+{db.close();}
