@@ -2,6 +2,7 @@
 #define DIALOGHAMZAOUI_H
 #include "personnel.h"
 #include "journaliste.h"
+#include"notification.h"
 
 #include <QDialog>
 
@@ -42,10 +43,15 @@ private slots:
 
     void on_pushButton_imprimer_employe_clicked();
 
+
+
+    void on_pushButton_statistique_clicked();
+
 private:
     Ui::Dialoghamzaoui *ui;
     personnel tmppersonnel;
     journaliste tmpjournaliste;
+Notification N;
 };
 
 #endif // DIALOGHAMZAOUI_H

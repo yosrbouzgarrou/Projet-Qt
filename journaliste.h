@@ -9,14 +9,14 @@ class journaliste
 {
 public:
     journaliste();
-    journaliste(int,QString,QString,int,int,QString);
+    journaliste(int,QString,QString,int,int,QString,int);
     int get_id();
     QString get_nom();
     QString get_prenom();
     int get_cin();
     int get_num_tel();
     QString get_domaine();
-
+int get_salaire();
     bool ajouter();
     QSqlQueryModel * afficher();
     bool supprimer(int);
@@ -28,6 +28,7 @@ public:
 
 private:
 int id;
+int salaire;
 QString nom;
 QString prenom;
 int cin;

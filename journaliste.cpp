@@ -11,10 +11,10 @@ journaliste::journaliste()
     cin=0;
     num_tel=0;
     domaine="";
-
+ salaire=0;
 }
 
-journaliste::journaliste(int id,QString nom,QString prenom,int cin,int num_tel,QString domaine)
+journaliste::journaliste(int id,QString nom,QString prenom,int cin,int num_tel,QString domaine,int salaire)
 {
     this->id=id;
     this->nom=nom;
@@ -22,7 +22,7 @@ journaliste::journaliste(int id,QString nom,QString prenom,int cin,int num_tel,Q
     this->cin=cin;
     this->num_tel=num_tel;
     this->domaine=domaine;
-
+ this->salaire=salaire;
 
 
 }
@@ -37,14 +37,16 @@ bool journaliste:: ajouter()
     QString res= QString::number(id);
     QString res1= QString::number(cin);
     QString res2= QString::number(num_tel);
-    query.prepare("INSERT INTO JOURNALISTE (ID,NOM,PRENOM,CIN,NUMTEL,DOMAINE) "
-                        "VALUES ( :id,:nom,:prenom, :cin, :num_tel, :domaine)");
+           QString res3= QString::number(salaire);
+    query.prepare("INSERT INTO JOURNALISTE (ID,NOM,PRENOM,CIN,NUMTEL,DOMAINE,SALAIRE) "
+                        "VALUES ( :id,:nom,:prenom, :cin, :num_tel, :domaine,:salaire)");
     query.bindValue(":id", res);
     query.bindValue(":nom",nom);
     query.bindValue(":prenom",prenom);
     query.bindValue(":cin", res1);
     query.bindValue(":num_tel", res2);
     query.bindValue(":domaine",domaine);
+    query.bindValue(":salaire",res3);
 
 
     return    query.exec();
@@ -60,6 +62,7 @@ model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRENOM"));
 model->setHeaderData(3, Qt::Horizontal, QObject::tr("NUMTEL"));
 model->setHeaderData(4, Qt::Horizontal, QObject::tr("CIN"));
 model->setHeaderData(5, Qt::Horizontal, QObject::tr("DOMAINE"));
+model->setHeaderData(6,Qt::Horizontal, QObject::tr("SALAIRE"));
 
     return model;
 }
@@ -128,6 +131,7 @@ QSqlQueryModel *journaliste::displayClause(QString cls)
     model->setHeaderData(3, Qt::Horizontal, QObject::tr("CIN"));
     model->setHeaderData(4, Qt::Horizontal, QObject::tr("NUMTEL"));
     model->setHeaderData(5, Qt::Horizontal, QObject::tr("DOMAINE"));
+    model->setHeaderData(6,Qt::Horizontal, QObject::tr("SALAIRE"));
 
 
     return model;

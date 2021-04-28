@@ -8,19 +8,20 @@ class personnel
 {
 public:
     personnel();
-    personnel(int,QString,QString,int,int,QString);
+    personnel(int,QString,QString,int,int,QString,int);
     int get_id();
     int get_num_telephone();
     QString get_nom();
     QString get_prenom();
     QString get_email();
     int get_cin();
+     int get_salaire();
     bool ajouter();
     QSqlQueryModel * afficher();
     QSqlQueryModel * afficher_email();
     bool testemail(QString);
     bool supprimer(int);
-    bool modifier(int,int);
+    bool modifier(int,int,int);
     QSqlQueryModel * rechercher(int );
     QSqlQueryModel * afficher_tri();
 
@@ -31,7 +32,7 @@ public:
 private:
 
 
-int id;
+int id,salaire;
 QString nom;
 QString prenom;
 int num_telephone;

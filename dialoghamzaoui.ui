@@ -88,7 +88,7 @@ QLineEdit {
     <widget class="QTabWidget" name="tabWidget_2">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>-10</x>
        <y>0</y>
        <width>1021</width>
        <height>481</height>
@@ -98,7 +98,7 @@ QLineEdit {
       <string notr="true">background-image: url(:/back/back.png);</string>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
@@ -107,7 +107,7 @@ QLineEdit {
       <widget class="QGroupBox" name="groupBox_13">
        <property name="geometry">
         <rect>
-         <x>40</x>
+         <x>10</x>
          <y>10</y>
          <width>941</width>
          <height>401</height>
@@ -358,6 +358,43 @@ border-color:red;
 background: #d1d1d1;</string>
         </property>
        </widget>
+       <widget class="QLabel" name="label_42">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>360</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #AFEEEE;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;salaire&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_9">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>340</y>
+          <width>221</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-width:2px;
+border-style:solid;
+border-color:red;
+background: #d1d1d1;</string>
+        </property>
+       </widget>
       </widget>
      </widget>
      <widget class="QWidget" name="tab_6">
@@ -491,6 +528,26 @@ font: bold, &quot;Comic Sans MS&quot;;</string>
         <string>Imprimer</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="pushButton_statistique">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>380</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background:#FFB6C1	;
+font: bold, &quot;Comic Sans MS&quot;;</string>
+       </property>
+       <property name="text">
+        <string>statistique</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
@@ -593,6 +650,43 @@ font: bold, &quot;Comic Sans MS&quot;;</string>
           <y>50</y>
           <width>231</width>
           <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-width:2px;
+border-style:solid;
+border-color:red;
+background: #d1d1d1;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_50">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>180</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #AFEEEE;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;salaire&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_22">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>160</y>
+          <width>231</width>
+          <height>61</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -1079,6 +1173,43 @@ background: #d1d1d1;</string>
           <string>Presse multimédia</string>
          </property>
         </item>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_10">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>330</y>
+          <width>221</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-width:2px;
+border-style:solid;
+border-color:red;
+background: #d1d1d1;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_43">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>350</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #AFEEEE;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;salaire&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
        </widget>
       </widget>
      </widget>

@@ -1,4 +1,5 @@
 #include "dialoghamzaoui.h"
+#include"notification.h"
 #include "ui_dialoghamzaoui.h"
 #include "personnel.h"
 #include "journaliste.h"
@@ -27,7 +28,7 @@
 #include <QPlainTextEdit>
 #include <QPlainTextDocumentLayout>
 
-
+QT_CHARTS_USE_NAMESPACE
 Dialoghamzaoui::Dialoghamzaoui(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialoghamzaoui)
@@ -54,6 +55,7 @@ void Dialoghamzaoui::on_pushButton_ajouter_personnel_clicked()
         int num_telephone= ui->lineEdit_4->text().toInt();
         int cin= ui->lineEdit_5->text().toInt();
         QString email=ui->lineEdit_6->text();
+        int salaire= ui->lineEdit_9->text().toInt();
 
 
         if(nom==""|| prenom==""||id==0||cin>99999999||num_telephone==0||tmppersonnel.testemail(email)==false||num_telephone>99999999||cin==0)
@@ -66,8 +68,9 @@ void Dialoghamzaoui::on_pushButton_ajouter_personnel_clicked()
 
                     }
         else{
-        personnel p(id,nom,prenom,num_telephone,cin,email);
+        personnel p(id,nom,prenom,num_telephone,cin,email,salaire);
          test=p.ajouter();}
+        N.notification_ajoutpersonnel();
          if(test)
          {
              ui->comboBox_mail_2->setModel(tmppersonnel.afficher_email());
@@ -91,9 +94,12 @@ void Dialoghamzaoui::on_pushButton_modifier_personnel_clicked()
 {
     int id= ui->comboBox_ID_personnel_modifier->currentText().toInt();
     int num_telephone= ui->lineEdit_21->text().toInt();
+    int salaire= ui->lineEdit_22->text().toInt();
 
-  bool test=tmppersonnel. modifier( id,num_telephone );
-     if (test)
+
+  bool test=tmppersonnel. modifier( id,num_telephone,salaire );
+   N.notification_modifierpersonnel();
+  if (test)
      {
          ui->comboBox_ID_personnel_modifier->setModel(tmppersonnel.afficher());
          ui->tabpersonnel->setModel(tmppersonnel.afficher());//refresh
@@ -110,8 +116,9 @@ void Dialoghamzaoui::on_pushButton_modifier_personnel_clicked()
 
 void Dialoghamzaoui::on_pushButton_supprimer_personnel_clicked()
 {
-    int res1=ui->comboBox_2->currentText().toInt();
-            bool test=tmppersonnel.supprimer(res1);
+    int res=ui->comboBox_2->currentText().toInt();
+            bool test=tmppersonnel.supprimer(res);
+            N.notification_supprimerpersonnel();
             if(test)
             {   ui->comboBox_2->setModel(tmppersonnel.afficher());
                 ui->tabpersonnel->setModel(tmppersonnel.afficher());
@@ -156,7 +163,7 @@ void Dialoghamzaoui::on_pushButton_ajouter_journaliste_clicked()
         int num_tel= ui->lineEdit_28->text().toInt();
         QString domaine= ui->comboBox->currentText();
 
-
+ int salaire= ui->lineEdit_10->text().toInt();
 
         if(nom==""|| prenom==""||id==0||cin>99999999||nom.length()>20||num_tel==0||cin==0||num_tel>99999999)
 
@@ -168,8 +175,9 @@ void Dialoghamzaoui::on_pushButton_ajouter_journaliste_clicked()
 
                     }
         else{
-        journaliste j(id,nom,prenom,cin,num_tel,domaine);
+        journaliste j(id,nom,prenom,cin,num_tel,domaine,salaire);
          test=j.ajouter();}
+        N.notification_ajoutjournaliste();
          if(test)
          {
              ui->comboBox_ID_journaliste_modifier->setModel(tmpjournaliste.afficher());
@@ -191,6 +199,7 @@ void Dialoghamzaoui::on_pushButton_modifier_journaliste_clicked()
     int num_tel= ui->lineEdit_30->text().toInt();
 
   bool test=tmpjournaliste.modifier( id,num_tel );
+  N.notification_modifierjournaliste();
      if (test)
      {
          ui->comboBox_ID_journaliste_modifier->setModel(tmpjournaliste.afficher());
@@ -209,8 +218,9 @@ void Dialoghamzaoui::on_pushButton_modifier_journaliste_clicked()
 
 void Dialoghamzaoui::on_pushButton_supprimer_journaliste_clicked()
 {
-    int res1=ui->comboBox_ID_journaliste->currentText().toInt();
-            bool test=tmpjournaliste.supprimer(res1);
+    int res=ui->comboBox_ID_journaliste->currentText().toInt();
+            bool test=tmpjournaliste.supprimer(res);
+            N.notification_supprimerjournaliste();
             if(test)
             {   ui->comboBox_ID_journaliste->setModel(tmpjournaliste.afficher());
                 ui->tabjournaliste->setModel(tmpjournaliste.afficher());
@@ -296,6 +306,53 @@ void Dialoghamzaoui::on_pushButton_imprimer_employe_clicked()
                        if (reponse == QMessageBox::No)
                        {
                             painter.end();
-                       }
+                      }
+}
 
+void Dialoghamzaoui::on_pushButton_statistique_clicked()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+                        model->setQuery("select * from PERSONNEL where SALAIRE < 750 ");
+                        float salaire=model->rowCount();
+                        model->setQuery("select * from PERSONNEL where SALAIRE  between 750 and 2500 ");
+                        float salairee=model->rowCount();
+                        model->setQuery("select * from PERSONNEL where SALAIRE>2600 ");
+                        float salaireee=model->rowCount();
+                        float total=salaire+salairee+salaireee;
+                        QString a=QString(" personnel moins de 750dt "+QString::number((salaire*100)/total,'f',2)+"%" );
+                        QString b=QString(" personnel entre 750 et2500 dt "+QString::number((salairee*100)/total,'f',2)+"%" );
+                        QString c=QString("personnel +2600dt"+QString::number((salaireee*100)/total,'f',2)+"%" );
+                        QPieSeries *series = new QPieSeries();
+                        series->append(a,salaire);
+                        series->append(b,salairee);
+                        series->append(c,salaireee);
+                if (salaire!=0)
+                {QPieSlice *slice = series->slices().at(0);
+                 slice->setLabelVisible();
+                 slice->setPen(QPen());}
+                if ( salairee!=0)
+                {
+                         // Add label, explode and define brush for 2nd slice
+                         QPieSlice *slice1 = series->slices().at(1);
+                         //slice1->setExploded();
+                         slice1->setLabelVisible();
+                }
+                if(salaireee!=0)
+                {
+                         // Add labels to rest of slices
+                         QPieSlice *slice2 = series->slices().at(2);
+                         //slice1->setExploded();
+                         slice2->setLabelVisible();
+                }
+                        // Create the chart widget
+                        QChart *chart = new QChart();
+                        // Add data to chart with title and hide legend
+                        chart->addSeries(series);
+                        chart->setTitle("Pourcentage Par Duree d'e promotion'commande des personnels :salaire  "+ QString::number(total));
+                        chart->legend()->hide();
+                        // Used to display the chart
+                        QChartView *chartView = new QChartView(chart);
+                        chartView->setRenderHint(QPainter::Antialiasing);
+                        chartView->resize(1000,500);
+                        chartView->show();
 }
