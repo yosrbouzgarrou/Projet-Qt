@@ -2,7 +2,7 @@
 #define DIALOGHAMZAOUI_H
 #include "personnel.h"
 #include "journaliste.h"
-#include"notification.h"
+#include"notificationham.h"
 
 #include <QDialog>
 

@@ -23,14 +23,14 @@ SOURCES += \
     journaliste.cpp \
     main.cpp \
     connexion.cpp\
-    notification.cpp \
+    notificationham.cpp \
     personnel.cpp \
     smtp.cpp
 
 HEADERS += \
     dialoghamzaoui.h \
     journaliste.h \
-    notification.h \
+    notificationham.h \
     personnel.h \
     smtp.h
 

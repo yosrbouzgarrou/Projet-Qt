@@ -16,7 +16,7 @@
   <widget class="QTabWidget" name="Tab">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>0</x>
      <y>0</y>
      <width>1201</width>
      <height>611</height>
@@ -28,58 +28,13 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">QTabWidget::pane { /* The tab widget frame */
-	background-image: url(:/back/back.png);
-
-	color: rgb(98, 213, 255);
-
-
-border-top: 5px solid #535353;
-}
-QTabWidget::tab-bar {
-left: 0px; /* move to the right by 5px */
-}
-/* Style the tab using the tab sub-control. Note that it reads QTabBar _not_ QTabWidget */
-QTabBar::tab {
-background: #dcdcdc;
-border: 2px solid #535353;
-border-bottom-color: #535353; /* same as the pane color */
-border-top-left-radius: 7px;
-border-top-right-radius: 7px;
-min-width: 120px;
-padding: 8px;
-color: #6a1616;
-font-size:15px;
-font-family:Arial, Helvetica, sans-serif;
-}
-QTabBar::tab:selected, QTabBar::tab:hover {
-background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #c3a1a1, stop: 0.4 #62d5ff, stop: 0.5 #439eff, stop: 1.0 #3a65ff);
-}
-QTabBar::tab:selected {
-border-color: #9B9B9B;
-border-bottom-color: #535353; /* same as pane color */
-color: #dcdcdc;
-font-size:15px;
-font-family:Arial, Helvetica, sans-serif;
-}
-QTabBar::tab:!selected {
-margin-top: 2px; /* make non-selected tabs look smaller */
-}
-QLineEdit {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}</string>
+    <string notr="true">background-color:rgb(233,248,255);</string>
    </property>
    <property name="tabShape">
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -95,10 +50,10 @@ QLineEdit {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-image: url(:/back/back.png);</string>
+      <string notr="true">background-color:rgb(233,248,255);</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
@@ -120,18 +75,13 @@ QLineEdit {
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>100</y>
+          <y>80</y>
           <width>111</width>
           <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
+         <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Nom&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -143,32 +93,21 @@ text-align:center;</string>
           <x>300</x>
           <y>30</y>
           <width>221</width>
-          <height>61</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_33">
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>150</y>
+          <y>130</y>
           <width>111</width>
           <height>31</height>
          </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Prénom&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -180,32 +119,21 @@ text-align:center;</string>
           <x>300</x>
           <y>80</y>
           <width>221</width>
-          <height>61</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_34">
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>200</y>
+          <y>180</y>
           <width>111</width>
           <height>31</height>
          </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Num. Tel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -217,32 +145,24 @@ text-align:center;</string>
           <x>300</x>
           <y>130</y>
           <width>221</width>
-          <height>61</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_35">
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>50</y>
+          <y>40</y>
           <width>111</width>
           <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
+         <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ID &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -254,14 +174,11 @@ text-align:center;</string>
           <x>300</x>
           <y>180</y>
           <width>221</width>
-          <height>61</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButton_ajouter_personnel">
@@ -274,11 +191,16 @@ background: #d1d1d1;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background:#FFB6C1	;
-font: bold, &quot;Comic Sans MS&quot;;</string>
+         <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:rgb(101, 190, 155);
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
         </property>
         <property name="text">
          <string>ok</string>
@@ -287,19 +209,11 @@ font: bold, &quot;Comic Sans MS&quot;;</string>
        <widget class="QLabel" name="label_39">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>250</y>
+          <x>70</x>
+          <y>240</y>
           <width>111</width>
           <height>31</height>
          </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;CIN&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -311,32 +225,21 @@ text-align:center;</string>
           <x>300</x>
           <y>230</y>
           <width>221</width>
-          <height>61</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_41">
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>300</y>
+          <y>280</y>
           <width>111</width>
           <height>31</height>
          </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Email&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -348,32 +251,21 @@ text-align:center;</string>
           <x>300</x>
           <y>280</y>
           <width>221</width>
-          <height>61</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_42">
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>360</y>
+          <y>350</y>
           <width>111</width>
           <height>31</height>
          </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;salaire&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -385,14 +277,11 @@ text-align:center;</string>
           <x>300</x>
           <y>340</y>
           <width>221</width>
-          <height>61</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
       </widget>
@@ -410,14 +299,6 @@ background: #d1d1d1;</string>
          <height>31</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
-       </property>
        <property name="text">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ID &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
@@ -432,10 +313,7 @@ text-align:center;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+        <string notr="true">background-color:rgb(233,248,255);</string>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton_rechercher_personnel">
@@ -448,11 +326,16 @@ background: #d1d1d1;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background:#FFB6C1	;
-font: bold, &quot;Comic Sans MS&quot;;</string>
+        <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:rgb(101, 190, 155);
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
        </property>
        <property name="text">
         <string>Rechercher</string>
@@ -502,10 +385,7 @@ text-align:center;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton_imprimer_employe">
@@ -518,11 +398,16 @@ background: #d1d1d1;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background:#FFB6C1	;
-font: bold, &quot;Comic Sans MS&quot;;</string>
+        <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:rgb(101, 190, 155);
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
        </property>
        <property name="text">
         <string>Imprimer</string>
@@ -538,11 +423,16 @@ font: bold, &quot;Comic Sans MS&quot;;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background:#FFB6C1	;
-font: bold, &quot;Comic Sans MS&quot;;</string>
+        <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:rgb(101, 190, 155);
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
        </property>
        <property name="text">
         <string>statistique</string>
@@ -574,14 +464,6 @@ font: bold, &quot;Comic Sans MS&quot;;</string>
           <height>31</height>
          </rect>
         </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
-        </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Num. Tel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
@@ -594,14 +476,6 @@ text-align:center;</string>
           <width>111</width>
           <height>31</height>
          </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ID &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -617,10 +491,7 @@ text-align:center;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButton_modifier_personnel">
@@ -633,11 +504,16 @@ background: #d1d1d1;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background:#FFB6C1	;
-font: bold, &quot;Comic Sans MS&quot;;</string>
+         <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:rgb(101, 190, 155);
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
         </property>
         <property name="text">
          <string>Modifier</string>
@@ -653,28 +529,17 @@ font: bold, &quot;Comic Sans MS&quot;;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_50">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>80</x>
           <y>180</y>
           <width>111</width>
           <height>31</height>
          </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;salaire&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -690,10 +555,7 @@ text-align:center;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
       </widget>
@@ -745,11 +607,16 @@ text-align:center;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background:#FFB6C1	;
-font: bold, &quot;Comic Sans MS&quot;;</string>
+         <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:rgb(101, 190, 155);
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
         </property>
         <property name="text">
          <string>OK</string>
@@ -765,10 +632,7 @@ font: bold, &quot;Comic Sans MS&quot;;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
       </widget>
@@ -802,15 +666,7 @@ background: #d1d1d1;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">
-padding: 0 8px;
-
-
-
-border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
         <property name="text">
          <string/>
@@ -826,11 +682,16 @@ background: #d1d1d1;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background:#FFB6C1	;
-font: bold, &quot;Comic Sans MS&quot;;</string>
+         <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:rgb(101, 190, 155);
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
         </property>
         <property name="text">
          <string>Send</string>
@@ -846,10 +707,7 @@ font: bold, &quot;Comic Sans MS&quot;;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
        <widget class="QPlainTextEdit" name="msg_2">
@@ -862,15 +720,7 @@ background: #d1d1d1;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">
-padding: 0 8px;
-
-
-
-border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
       </widget>
@@ -894,7 +744,7 @@ background: #d1d1d1;</string>
       <string notr="true">background-image: url(:/back/back.png);</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tab_10">
       <attribute name="title">
@@ -909,6 +759,9 @@ background: #d1d1d1;</string>
          <height>381</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <property name="title">
         <string>Journaliste</string>
        </property>
@@ -920,14 +773,6 @@ background: #d1d1d1;</string>
           <width>111</width>
           <height>31</height>
          </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Prenom&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -942,14 +787,6 @@ text-align:center;</string>
           <height>31</height>
          </rect>
         </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
-        </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Nom&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
@@ -960,14 +797,11 @@ text-align:center;</string>
           <x>270</x>
           <y>70</y>
           <width>221</width>
-          <height>61</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="lineEdit_8">
@@ -976,14 +810,11 @@ background: #d1d1d1;</string>
           <x>270</x>
           <y>120</y>
           <width>221</width>
-          <height>61</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_26">
@@ -994,14 +825,6 @@ background: #d1d1d1;</string>
           <width>111</width>
           <height>31</height>
          </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ID&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1017,11 +840,16 @@ text-align:center;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background:#FFB6C1	;
-font: bold, &quot;Comic Sans MS&quot;;</string>
+         <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:rgb(101, 190, 155);
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
         </property>
         <property name="text">
          <string>Ajouter</string>
@@ -1033,14 +861,14 @@ font: bold, &quot;Comic Sans MS&quot;;</string>
           <x>270</x>
           <y>20</y>
           <width>221</width>
-          <height>61</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
+        </property>
+        <property name="text">
+         <string/>
         </property>
        </widget>
        <widget class="QLabel" name="label_40">
@@ -1051,14 +879,6 @@ background: #d1d1d1;</string>
           <width>111</width>
           <height>31</height>
          </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Num.Tel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1073,14 +893,6 @@ text-align:center;</string>
           <height>31</height>
          </rect>
         </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
-        </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Domaine&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
@@ -1091,14 +903,11 @@ text-align:center;</string>
           <x>270</x>
           <y>220</y>
           <width>221</width>
-          <height>61</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="lineEdit_35">
@@ -1107,14 +916,11 @@ background: #d1d1d1;</string>
           <x>270</x>
           <y>170</y>
           <width>221</width>
-          <height>61</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_52">
@@ -1125,14 +931,6 @@ background: #d1d1d1;</string>
           <width>111</width>
           <height>31</height>
          </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;CIN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1148,10 +946,7 @@ text-align:center;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
         <item>
          <property name="text">
@@ -1180,32 +975,21 @@ background: #d1d1d1;</string>
           <x>270</x>
           <y>330</y>
           <width>221</width>
-          <height>61</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_43">
         <property name="geometry">
          <rect>
-          <x>50</x>
-          <y>350</y>
+          <x>40</x>
+          <y>340</y>
           <width>111</width>
           <height>31</height>
          </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;salaire&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1233,18 +1017,10 @@ text-align:center;</string>
         <property name="geometry">
          <rect>
           <x>40</x>
-          <y>80</y>
+          <y>90</y>
           <width>111</width>
           <height>31</height>
          </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Num.Tel&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1259,14 +1035,6 @@ text-align:center;</string>
           <height>31</height>
          </rect>
         </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
-        </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ID&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
@@ -1275,16 +1043,13 @@ text-align:center;</string>
         <property name="geometry">
          <rect>
           <x>270</x>
-          <y>60</y>
+          <y>80</y>
           <width>221</width>
-          <height>61</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButton_modifier_journaliste">
@@ -1297,11 +1062,16 @@ background: #d1d1d1;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background:#FFB6C1	;
-font: bold, &quot;Comic Sans MS&quot;;</string>
+         <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:rgb(101, 190, 155);
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
         </property>
         <property name="text">
          <string>Modifier</string>
@@ -1317,10 +1087,7 @@ font: bold, &quot;Comic Sans MS&quot;;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
       </widget>
@@ -1372,14 +1139,6 @@ text-align:center;</string>
          <height>31</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background: #AFEEEE;
-font: bold, &quot;Comic Sans MS&quot;;;
-text-align:center;</string>
-       </property>
        <property name="text">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;ID&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
@@ -1394,10 +1153,7 @@ text-align:center;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+        <string notr="true">background-color:rgb(233,248,255);</string>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton_rechercher_journaliste">
@@ -1410,11 +1166,16 @@ background: #d1d1d1;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background:#FFB6C1	;
-font: bold, &quot;Comic Sans MS&quot;;</string>
+        <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:rgb(101, 190, 155);
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
        </property>
        <property name="text">
         <string>Rechercher</string>
@@ -1430,10 +1191,7 @@ font: bold, &quot;Comic Sans MS&quot;;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </widget>
@@ -1484,12 +1242,16 @@ text-align:center;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 10px;
-padding: 0 8px;
-background:#FFB6C1	;
-font: bold, &quot;Comic Sans MS&quot;;
-</string>
+         <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:rgb(101, 190, 155);
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
         </property>
         <property name="text">
          <string>OK</string>
@@ -1505,10 +1267,7 @@ font: bold, &quot;Comic Sans MS&quot;;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-width:2px;
-border-style:solid;
-border-color:red;
-background: #d1d1d1;</string>
+         <string notr="true">background-color:rgb(233,248,255);</string>
         </property>
        </widget>
       </widget>
