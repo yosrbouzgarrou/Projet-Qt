@@ -1,4 +1,4 @@
-#include "notification.h"
+#include "notificationn.h"
 #include <QSystemTrayIcon>
 
 notification::notification(QWidget *parent) : QWidget(parent)

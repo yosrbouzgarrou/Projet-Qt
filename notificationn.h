@@ -1,5 +1,5 @@
-#ifndef NOTIFICATION_H
-#define NOTIFICATION_H
+#ifndef NOTIFICATIONN_H
+#define NOTIFICATIONN_H
 
 #include <QWidget>
 #include <QLabel>
@@ -47,4 +47,4 @@ class notification :public QWidget
 };
 
 
-#endif // NOTIFICATION_H
+#endif // NOTIFICATIONN_H

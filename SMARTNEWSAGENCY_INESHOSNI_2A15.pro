@@ -17,23 +17,23 @@ SOURCES += \
     arduino.cpp \
     connexion.cpp \
     fourniture.cpp \
+    ineswindow.cpp \
     main.cpp \
-    mainwindow.cpp \
     materiel.cpp \
-    notification.cpp \
+    notificationn.cpp \
     pieview.cpp
 
 HEADERS += \
     arduino.h \
     connexion.h \
     fourniture.h \
-    mainwindow.h \
+    ineswindow.h \
     materiel.h \
-    notification.h \
+    notificationn.h \
     pieview.h
 
 FORMS += \
-    mainwindow.ui
+    ineswindow.ui
 
 RESOURCES += \
     chart.qrc
