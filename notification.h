@@ -1,31 +1,50 @@
 #ifndef NOTIFICATION_H
 #define NOTIFICATION_H
 
-#include <QSystemTrayIcon>
-#include<QString>
-class Notification
+#include <QWidget>
+#include <QLabel>
+#include <QGridLayout>
+#include <QPropertyAnimation>
+#include <QTimer>
+#include <QPainter>
+#include <QApplication>
+#include <QDesktopWidget>
+#include <QDebug>
+
+
+
+class notification :public QWidget
 {
-public:
-    Notification();
-    void notification_ajoutjournaliste();
+    Q_OBJECT
 
-    void notification_ajoutpersonnel();
-    void notification_supprimerjournaliste();
+       Q_PROPERTY(float popupOpacity READ getPopupOpacity WRITE setPopupOpacity)
 
-    void notification_supprimerpersonnel();
-    void notification_modifierjournaliste();
+       void setPopupOpacity(float opacity);
+       float getPopupOpacity() const;
 
-    void notification_modifierpersonnel();
-    void mail_personnel();
+   public:
+       explicit notification(QWidget *parent = 0);
 
-
+   protected:
+       void paintEvent(QPaintEvent *event);
 
 
+   public slots:
+       void setPopupText(const QString& text);
+       void show();
+
+   private slots:
+       void hideAnimation();
+       void hide();
 
 
+   private:
+       QLabel label;
+       QGridLayout layout;
+       QPropertyAnimation animation;
+       float popupOpacity;
+       QTimer *timer;
 };
-
-
 
 
 #endif // NOTIFICATION_H

@@ -1,31 +1,58 @@
-#include "connexion.h"
-#include"dialoghamzaoui.h"
-#include"personnel.h"
-#include"journaliste.h"
-
+#include "mainwindow.h"
 #include <QApplication>
 #include <QMessageBox>
-#include <QtDebug>
+#include "connexion.h"
+#include <QSqlDatabase>
+
+
+
+#include <QtCore>
+#include <QPdfWriter>
+#include <QPainter>
+#include <QSplashScreen>
+#include <QTimer>
 
 
 
 
 int main(int argc, char *argv[])
 {
+    Q_INIT_RESOURCE(chart);
+
     QApplication a(argc, argv);
-    Dialoghamzaoui w;
-    Connexion c;
-       bool test=c.ouvrirConnexion();
-       if(test)
-       {w.show();
-           QMessageBox::information(nullptr, QObject::tr("database is open"),
-                       QObject::tr("connection successful.\n"
-                                   "Click Cancel to exit."), QMessageBox::Cancel);
-   }
-   else
-           QMessageBox::critical(nullptr, QObject::tr("database is not open"),
-                       QObject::tr("connection failed.\n"
-                                   "Click Cancel to exit."), QMessageBox::Cancel);
+
+   // QPixmap pixmap(":/Charts/logo.png");
+   // QSplashScreen splash(pixmap, Qt::WindowStaysOnTopHint);
+   // splash.show();
+   // QTimer::singleShot(1000, &splash, &QWidget::close);
+
+    connexion c;
+
+
+    bool test=c.createConnexion();
+
+
+
+
+
+     MainWindow w;
+
+
+    if(test)
+    {
+     // ui->tableView->setModel(ptmp.afficher());
+      //  ui->tableView_2->setModel(rtmp.afficher());
+        w.show();
+        QMessageBox::information(nullptr, QObject::tr("database is open"),
+                    QObject::tr("connection successful."), QMessageBox::Cancel);
+
+}
+    else
+        QMessageBox::critical(nullptr, QObject::tr("database is not open"),
+                    QObject::tr("connection failed.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+
+
 
     return a.exec();
 }

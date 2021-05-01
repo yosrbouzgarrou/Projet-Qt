@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/Charts">
+        <file>qtdata.cht</file>
+        <file>splah.JPG</file>
+        <file>logo.png</file>
+    </qresource>
+</RCC>

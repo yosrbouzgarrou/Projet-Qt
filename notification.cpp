@@ -1,82 +1,100 @@
 #include "notification.h"
-
 #include <QSystemTrayIcon>
-#include<QString>
-Notification::Notification()
+
+notification::notification(QWidget *parent) : QWidget(parent)
 {
+    setWindowFlags(Qt::FramelessWindowHint |        // Disable window decoration
+                   Qt::Tool |                       // Discard display in a separate window
+                   Qt::WindowStaysOnTopHint);       // Set on top of all windows
+    setAttribute(Qt::WA_TranslucentBackground);     // Indicates that the background will be transparent
+    setAttribute(Qt::WA_ShowWithoutActivating);     // At the show, the widget does not get the focus automatically
 
+    animation.setTargetObject(this);                // Set the target animation
+    animation.setPropertyName("popupOpacity");      //
+    connect(&animation, &QAbstractAnimation::finished, this, &notification::hide);
+
+    label.setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+    label.setStyleSheet("QLabel { color : white; "
+                        "margin-top: 30px;"
+                        "margin-bottom: 30px;"
+                        "margin-left: 90px;"
+                        "margin-right: 90px; }");
+
+    layout.addWidget(&label, 0, 0);
+    setLayout(&layout);
+
+    timer = new QTimer();
+    connect(timer, &QTimer::timeout, this, &notification::hideAnimation);
 }
 
-void Notification::notification_ajoutjournaliste()
+void notification::paintEvent(QPaintEvent *event)
 {
+    Q_UNUSED(event)
 
-    QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
 
-   // notifyIcon->setIcon(QIcon(":/new/prefix1/MyResources/computer-icons-avatar-user-login-avatar.jpg"));
-    notifyIcon->show();
-    notifyIcon->showMessage("Gestion des journalistes ","Nouveau journaliste ajouté ",QSystemTrayIcon::Information,150);
+    QRect roundedRect;
+    roundedRect.setX(rect().x() + 5);
+    roundedRect.setY(rect().y() + 5);
+    roundedRect.setWidth(rect().width() - 10);
+    roundedRect.setHeight(rect().height() - 10);
+
+    painter.setBrush(QBrush(QColor(0,0,0,180)));
+    painter.setPen(Qt::NoPen);
+
+    painter.drawRoundedRect(roundedRect, 10, 10);
 }
 
-void Notification::notification_ajoutpersonnel()
+void notification::setPopupText(const QString &text)
 {
-
-    QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
-
-   // notifyIcon->setIcon(QIcon(":/new/prefix1/MyResources/computer-icons-avatar-user-login-avatar.jpg"));
-    notifyIcon->show();
-    notifyIcon->showMessage("Gestion des personnels ","Nouveau personnel ajouté ",QSystemTrayIcon::Information,15000);
+    label.setText(text);    // Set the text in the Label
+    adjustSize();           // With the recalculation notice sizes
 }
 
+void notification::show()
+{
+    setWindowOpacity(0.0);  // Set the transparency to zero
 
+    animation.setDuration(2000);     // Configuring the duration of the animation
+    animation.setStartValue(0.0);   // The start value is 0 (fully transparent widget)
+    animation.setEndValue(1.0);     // End - completely opaque widget
 
+    setGeometry(QApplication::desktop()->availableGeometry().width() - 36 - width() + QApplication::desktop() -> availableGeometry().x(),
+                QApplication::desktop()->availableGeometry().height() - 36 - height() + QApplication::desktop() -> availableGeometry().y(),
+                width(),
+                height());
+    QWidget::show();
 
-void Notification::notification_supprimerjournaliste(){
-    QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
-
-   // notifyIcon->setIcon(QIcon(":/new/prefix1/MyResources/computer-icons-avatar-user-login-avatar.jpg"));
-    notifyIcon->show();
-    notifyIcon->showMessage("Gestion des journalistes","journaliste Supprimé",QSystemTrayIcon::Information,15000);
+    animation.start();
+    timer->start(8500);
 }
 
-void Notification::notification_supprimerpersonnel(){
-    QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
-
-   // notifyIcon->setIcon(QIcon(":/new/prefix1/MyResources/computer-icons-avatar-user-login-avatar.jpg"));
-    notifyIcon->show();
-    notifyIcon->showMessage("Gestion des personnels ","Un personnel est supprimé",QSystemTrayIcon::Information,15000);
-
+void notification::hideAnimation()
+{
+    timer->stop();
+    animation.setDuration(6000);
+    animation.setStartValue(1.0);
+    animation.setEndValue(0.0);
+    animation.start();
 }
 
-
-
-
-void Notification::notification_modifierjournaliste(){
-    QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
-
-   // notifyIcon->setIcon(QIcon(":/new/prefix1/MyResources/computer-icons-avatar-user-login-avatar.jpg"));
-    notifyIcon->show();
-    notifyIcon->showMessage("Gestion des journalistes ","Un journaliste est modifié",QSystemTrayIcon::Information,15000);
-
+void notification::hide()
+{
+    // If the widget is transparent, then hide it
+    if(getPopupOpacity() == 0.0){
+        QWidget::hide();
+    }
 }
 
-void Notification::notification_modifierpersonnel(){
-    QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
+void notification::setPopupOpacity(float opacity)
+{
+    popupOpacity = opacity;
 
-   // notifyIcon->setIcon(QIcon(":/new/prefix1/MyResources/computer-icons-avatar-user-login-avatar.jpg"));
-    notifyIcon->show();
-    notifyIcon->showMessage("Gestion des personnels ","Un personnel est modifié",QSystemTrayIcon::Information,15000);
-
+    setWindowOpacity(opacity);
 }
 
-
-void Notification::mail_personnel(){
-    QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
-
-   // notifyIcon->setIcon(QIcon(":/new/prefix1/MyResources/computer-icons-avatar-user-login-avatar.jpg"));
-    notifyIcon->show();
-    notifyIcon->showMessage("","Votre Mail est envoyé :)",QSystemTrayIcon::Information,15000);
-
+float notification::getPopupOpacity() const
+{
+    return popupOpacity;
 }
-
-
-
