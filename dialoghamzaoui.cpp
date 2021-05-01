@@ -27,6 +27,7 @@
 #include"QSortFilterProxyModel"
 #include <QPlainTextEdit>
 #include <QPlainTextDocumentLayout>
+#include<QMediaPlayer>
 
 QT_CHARTS_USE_NAMESPACE
 Dialoghamzaoui::Dialoghamzaoui(QWidget *parent) :
@@ -40,6 +41,8 @@ Dialoghamzaoui::Dialoghamzaoui(QWidget *parent) :
     ui->comboBox_ID_personnel_modifier->setModel(tmppersonnel.afficher());
     ui->comboBox_ID_journaliste_modifier->setModel(tmpjournaliste.afficher());
     ui->tabjournaliste->setModel(tmpjournaliste.afficher());//refresh
+    sound = new QMediaPlayer();
+    sound->setMedia(QUrl("qrc:/sounds/click.mp3"));
 }
 
 Dialoghamzaoui::~Dialoghamzaoui()
@@ -47,7 +50,7 @@ Dialoghamzaoui::~Dialoghamzaoui()
     delete ui;
 }
 void Dialoghamzaoui::on_pushButton_ajouter_personnel_clicked()
-{
+{sound->play();
     bool test;
         int id= ui->lineEdit_1->text().toInt();
         QString nom= ui->lineEdit_2->text();
@@ -91,7 +94,7 @@ void Dialoghamzaoui::on_pushButton_ajouter_personnel_clicked()
 
 
 void Dialoghamzaoui::on_pushButton_modifier_personnel_clicked()
-{
+{sound->play();
     int id= ui->comboBox_ID_personnel_modifier->currentText().toInt();
     int num_telephone= ui->lineEdit_21->text().toInt();
     int salaire= ui->lineEdit_22->text().toInt();
@@ -115,7 +118,7 @@ void Dialoghamzaoui::on_pushButton_modifier_personnel_clicked()
 }
 
 void Dialoghamzaoui::on_pushButton_supprimer_personnel_clicked()
-{
+{sound->play();
     int res=ui->comboBox_2->currentText().toInt();
             bool test=tmppersonnel.supprimer(res);
             N.notification_supprimerpersonnel();
@@ -134,7 +137,7 @@ void Dialoghamzaoui::on_pushButton_supprimer_personnel_clicked()
 }
 
 void Dialoghamzaoui::on_pushButton_rechercher_personnel_clicked()
-{
+{sound->play();
     int id;
     id=ui->lineEdit_13->text().toInt();
 
@@ -147,14 +150,14 @@ void Dialoghamzaoui::on_pushButton_rechercher_personnel_clicked()
 }
 
 void Dialoghamzaoui::on_radioButton_tri_personnel_clicked()
-{
+{sound->play();
     ui->tabpersonnel->setModel( tmppersonnel.afficher_tri());
 }
 
 
 
 void Dialoghamzaoui::on_pushButton_ajouter_journaliste_clicked()
-{
+{sound->play();
     bool test;
         int id= ui->lineEdit_27->text().toInt();
         QString nom= ui->lineEdit_7->text();
@@ -194,7 +197,7 @@ void Dialoghamzaoui::on_pushButton_ajouter_journaliste_clicked()
 }
 
 void Dialoghamzaoui::on_pushButton_modifier_journaliste_clicked()
-{
+{sound->play();
     int id= ui->comboBox_ID_journaliste_modifier->currentText().toInt();
     int num_tel= ui->lineEdit_30->text().toInt();
 
@@ -217,7 +220,7 @@ void Dialoghamzaoui::on_pushButton_modifier_journaliste_clicked()
 
 
 void Dialoghamzaoui::on_pushButton_supprimer_journaliste_clicked()
-{
+{sound->play();
     int res=ui->comboBox_ID_journaliste->currentText().toInt();
             bool test=tmpjournaliste.supprimer(res);
             N.notification_supprimerjournaliste();
@@ -236,12 +239,12 @@ void Dialoghamzaoui::on_pushButton_supprimer_journaliste_clicked()
 }
 
 void Dialoghamzaoui::on_radioButton_id_journaliste_clicked()
-{
+{sound->play();
     ui->tabjournaliste->setModel( tmpjournaliste.afficher_tri());
 }
 
 void Dialoghamzaoui::on_pushButton_rechercher_journaliste_clicked()
-{
+{sound->play();
     int id;
     id=ui->lineEdit_14->text().toInt();
 
@@ -254,7 +257,7 @@ void Dialoghamzaoui::on_pushButton_rechercher_journaliste_clicked()
 }
 
 void Dialoghamzaoui::on_pushButton_Mail_2_clicked()
-{
+{sound->play();
     Smtp* smtp = new Smtp("amen.benkhalifaaaaaa@gmail.com","amenamen1234","smtp.gmail.com",465);
        connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
 
@@ -356,3 +359,6 @@ void Dialoghamzaoui::on_pushButton_statistique_clicked()
                         chartView->resize(1000,500);
                         chartView->show();
 }
+
+
+

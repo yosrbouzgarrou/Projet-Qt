@@ -2,7 +2,7 @@ QT       += core gui sql printsupport network
 QT += core gui charts
 QT +=serialport
 
-
+QT       += core gui sql multimedia printsupport charts network serialport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11 console
@@ -45,4 +45,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    back.qrc
+    resources.qrc
+
+DISTFILES += \
+    click.mp3

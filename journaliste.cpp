@@ -118,8 +118,6 @@ model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
 
 
 
-
-
 QSqlQueryModel *journaliste::displayClause(QString cls)
 {
     QSqlQueryModel * model= new QSqlQueryModel();

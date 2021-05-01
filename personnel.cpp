@@ -136,6 +136,8 @@ return false;}
 
 
 
+
+
 QSqlQueryModel *personnel::displayClause(QString cls)
 {
     QSqlQueryModel * model= new QSqlQueryModel();

@@ -5,6 +5,8 @@
 #include"notificationham.h"
 
 #include <QDialog>
+#include <QMediaPlayer>
+#include <QSound>
 
 namespace Ui {
 class Dialoghamzaoui;
@@ -45,13 +47,22 @@ private slots:
 
 
 
+
     void on_pushButton_statistique_clicked();
+
+    void on_radioButton_id_journaliste_3_clicked();
+
+    void on_pushButton_supprimer_journaliste_2_clicked();
+
+    void on_pushButton_affichersalaires_clicked();
 
 private:
     Ui::Dialoghamzaoui *ui;
     personnel tmppersonnel;
     journaliste tmpjournaliste;
+
 Notification N;
+ QMediaPlayer * sound;
 };
 
 #endif // DIALOGHAMZAOUI_H
