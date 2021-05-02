@@ -24,7 +24,7 @@ public:
     bool modifier(int,int,int);
     QSqlQueryModel * rechercher(int );
     QSqlQueryModel * afficher_tri();
-
+ QSqlQueryModel * loadData_personnel();
     QSqlQueryModel *displayClause(QString cls);
 
 

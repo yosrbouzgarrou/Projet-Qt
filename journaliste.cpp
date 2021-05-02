@@ -107,22 +107,57 @@ QSqlQueryModel * journaliste::rechercher(int id)
 
         return model;
    }
+QSqlQueryModel * journaliste::trierr(const QString &critere, const QString &mode )
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+
+model->setQuery("select * from JOURNALISTE order by "+critere+" "+mode+"");
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRENOM"));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("NUMTEL"));
+model->setHeaderData(4, Qt::Horizontal, QObject::tr("CIN"));
+model->setHeaderData(5, Qt::Horizontal, QObject::tr("DOMAINE"));
+model->setHeaderData(6,Qt::Horizontal, QObject::tr("SALAIRE"));
+
+    return model;
+}
 QSqlQueryModel * journaliste::afficher_tri()
 {QSqlQueryModel * model= new QSqlQueryModel();
 
-model->setQuery("select * from JOURNALISTE order by ID desc ");
+model->setQuery("select * from JOURNALISTE order by ID asc ");
 model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
 
     return model;
 }
+QSqlQueryModel*  journaliste::Tri_nom()
+{
+    QSqlQueryModel* model =new QSqlQueryModel();
+     QSqlQuery  *tmpjournaliste = new QSqlQuery();
+     tmpjournaliste->prepare("SELECT * FROM JOURNALISTE order by NOM asc");
+     tmpjournaliste->exec();
+     model->setQuery(*tmpjournaliste);
+     return model ;
+
+}
 
 
+
+QSqlQueryModel * journaliste::loadData_journaliste()
+{
+    QSqlQueryModel *model=new QSqlQueryModel();
+    QSqlQuery query;
+    query.prepare("select SALAIRE from JOURNALISTE");
+    query.exec();
+    model->setQuery(query);
+    return model;
+}
 
 QSqlQueryModel *journaliste::displayClause(QString cls)
 {
     QSqlQueryModel * model= new QSqlQueryModel();
 
-    model->setQuery("SELECT * FROM MARCHANDISE " +cls);
+    model->setQuery("SELECT * FROM JOUNALISTE " +cls);
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRENOM"));

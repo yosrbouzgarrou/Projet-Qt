@@ -362,3 +362,32 @@ void Dialoghamzaoui::on_pushButton_statistique_clicked()
 
 
 
+
+
+void Dialoghamzaoui::on_pushButton_trinom_clicked()
+{
+    QString mode="DESC";
+        if (ui->checkBox_5->checkState()==false)
+            mode="ASC";
+    ui->tabjournaliste->setModel(tmpjournaliste.trierr(ui->comboBox_3->currentText(),mode));
+
+}
+
+
+void Dialoghamzaoui::on_pushButton_affichersalaires_clicked()
+{
+    sound->play();
+    journaliste s;
+    personnel p;
+    QSqlQueryModel *model1=new QSqlQueryModel();
+ model1=p.loadData_personnel();
+  QSqlQueryModel *model2=new QSqlQueryModel();
+ model2=s.loadData_journaliste();
+
+
+    ui->tabsalaires->setModel(model1);
+    ui->tabsalaires_2->setModel(model2);
+
+
+
+}

@@ -56,6 +56,13 @@ private slots:
 
     void on_pushButton_affichersalaires_clicked();
 
+    void on_pushButton_rechercher_journaliste_2_clicked();
+
+    void on_pushButton_trinom_clicked();
+  //  void on_champ_5_activated(const QString &arg1);
+
+
+
 private:
     Ui::Dialoghamzaoui *ui;
     personnel tmppersonnel;

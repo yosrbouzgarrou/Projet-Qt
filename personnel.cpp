@@ -134,7 +134,15 @@ if((test==1)&&(email[i]=="."))
 return false;}
 
 
-
+QSqlQueryModel * personnel::loadData_personnel()
+{
+    QSqlQueryModel *model=new QSqlQueryModel();
+    QSqlQuery query;
+    query.prepare("select salaire from PERSONNEL ");
+    query.exec();
+    model->setQuery(query);
+    return model;
+}
 
 
 

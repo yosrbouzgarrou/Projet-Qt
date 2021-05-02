@@ -23,9 +23,10 @@ int get_salaire();
     bool modifier(int,int);
     QSqlQueryModel * rechercher(int );
     QSqlQueryModel * afficher_tri();
-
+        QSqlQueryModel*Tri_nom();
+ QSqlQueryModel *  trierr(const QString &critere, const QString &mode );
     QSqlQueryModel *displayClause(QString cls);
-
+ QSqlQueryModel * loadData_journaliste();
 private:
 int id;
 int salaire;
